@@ -41,13 +41,14 @@ class HelloWorld extends Component {
     }
 }
 
-var WhatWeChoose = React.createClass({
-    render(){
+class WhatWeChoose extends Component {
+    render() {
         return (
-            <WhatWeChooseNavigator />
+            // <Text style={styles.text}>Hello world!</Text>
+             <WhatWeChooseNavigator />
         );
     }
-});
+}
 
 class WhatWeChooseNavigator extends Component {
     render() {

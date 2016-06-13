@@ -7,6 +7,7 @@
 'use strict';
 
 import {AppRegistry} from'react-native';
-import setup from './js/setup';
+// import setup from './js/setup';
+import WhatWeChoose from './js/WhatWeChoose';
 
-AppRegistry.registerComponent('WhatWeChoose', setup);
+AppRegistry.registerComponent('WhatWeChoose', ()=>WhatWeChoose);
