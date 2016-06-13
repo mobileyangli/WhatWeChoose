@@ -16,7 +16,7 @@ import {
     View,
     NavigatorIOS,
 } from 'react-native';
-
+import SearchPage from './SearchPage';
 
 /**
  * 1、添加HelloWorld Label
@@ -28,24 +28,48 @@ import {
 //         );
 //     }
 // }
+/**
+ * 1、end
+ */
 
 /**
  * 2、添加原生控件NavigationBar
  */
 
-class HelloWorld extends Component {
-    render() {
-        return (
-            <Text style={styles.text}>Hello world!</Text>
-        );
-    }
-}
+// class HelloWorld extends Component {
+//     render() {
+//         return (
+//             <Text style={styles.text}>Hello world!</Text>
+//         );
+//     }
+// }
+//
+// class WhatWeChoose extends Component {
+//     render() {
+//         return (
+//             // <Text style={styles.text}>Hello world!</Text>
+//             <WhatWeChooseNavigator />
+//         );
+//     }
+// }
+//
+// class WhatWeChooseNavigator extends Component {
+//     render() {
+//         return (
+//             <NavigatorIOS style={styles.container} initialRoute={{title:'WhatWeChoose', component:HelloWorld}}/>
+//         );
+//     }
+// }
+
+/**
+ * 3、正常开发App
+ */
 
 class WhatWeChoose extends Component {
     render() {
         return (
             // <Text style={styles.text}>Hello world!</Text>
-             <WhatWeChooseNavigator />
+            <WhatWeChooseNavigator />
         );
     }
 }
@@ -53,7 +77,7 @@ class WhatWeChoose extends Component {
 class WhatWeChooseNavigator extends Component {
     render() {
         return (
-            <NavigatorIOS style={styles.container} initialRoute={{title:'WhatWeChoose', component:HelloWorld}}/>
+            <NavigatorIOS style={styles.container} initialRoute={{title:'WhatWeChoose', component:SearchPage}}/>
         );
     }
 }
