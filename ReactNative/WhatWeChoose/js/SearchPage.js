@@ -16,7 +16,16 @@ import {
 } from 'react-native';
 
 class SearchPage extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            searchString: 'london'
+        }
+        console.log('props' + props);
+    }
+
     render() {
+        console.log('SearchPage.render ' + this.state.searchString);
         return (
             <View style={styles.container}>
                 <Text style={styles.description}>
@@ -27,7 +36,9 @@ class SearchPage extends Component {
                 </Text>
 
                 <View style={styles.flowRight}>
-                    <TextInput style={styles.searchInput} placeholder='Search via name or postcode'/>
+                    <TextInput style={styles.searchInput} value={this.state.searchString}
+                               onChange={this.onSearchTextChanged.bind(this)}
+                               placeholder='Search via name or postcode'/>
                     <TouchableHighlight style={styles.button} underlayColor='#99d9f4'>
                         <Text style={styles.buttonText}>Go</Text>
                     </TouchableHighlight>
@@ -40,6 +51,12 @@ class SearchPage extends Component {
                 <Image source={require('image!house')} style={styles.image}/>
             </View>
         );
+    }
+
+    onSearchTextChanged(event) {
+        console.log('onSearchTextChanged');
+        this.setState({searchString: event.nativeEvent.text});
+        console.log(this.state.searchString);
     }
 }
 
@@ -88,10 +105,10 @@ var styles = StyleSheet.create({
         borderRadius: 8,
         color       : '#48BBEC'
     },
-    image: {
-  width: 217,
-  height: 138
-}
+    image      : {
+        width : 217,
+        height: 138
+    }
 });
 
 module.exports = SearchPage;
