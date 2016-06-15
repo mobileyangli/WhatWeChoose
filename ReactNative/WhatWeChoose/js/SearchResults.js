@@ -87,7 +87,7 @@ var styles = StyleSheet.create({
         color     : '#48BBEC'
     },
     title        : {
-        fontSize: 20,
+        fontSize: 15,
         color   : '#656565'
     },
     rowContainer : {
